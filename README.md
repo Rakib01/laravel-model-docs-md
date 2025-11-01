@@ -7,9 +7,9 @@ Perfect for documenting your application's Eloquent models — their attributes,
 
 ## 🚀 Features
 
-* 📄 Generate Markdown documentation for all Eloquent models
+* 📄 Generate Markdown documentation for all Eloquent models in one file
 * ⚙️ Configurable output directory and formatting
-* 🧠 Detects attributes, relationships, casts, and fillable fields
+* 🧠 Detects attributes, relationships, casts, fillable, hidden, and appended fields
 * 🕹️ Simple Artisan command
 * 🧩 Fully open-source and easy to extend
 
@@ -49,11 +49,36 @@ Once installed, simply run:
 php artisan model-docs-md:generate
 ```
 
-By default, the documentation will be generated inside:
+This command will inspect all models in your app/Models directory and generate a single file named:
 
-```
-storage/app/model-docs/
-```
+storage/app/model-docs.md
+
+Each model will be represented as a section in the file, similar to this:
+
+## 🧩 App\Models\User
+**Table:** `users`
+
+
+**Columns:**
+
+
+| Name | Type | Cast |
+|------|------|------|
+| id | bigint | int |
+| name | varchar | - |
+| email | varchar | - |
+| password | varchar | - |
+
+
+**Fillable:** name, email, password  
+**Hidden:** password, remember_token  
+**Appends:** is_verified  
+
+
+**Relationships:**
+- **posts** → Post
+
+All models will be appended sequentially in this same Markdown file — allowing you to have a complete model documentation in one place.
 
 ## 🛠️ Requirements
 

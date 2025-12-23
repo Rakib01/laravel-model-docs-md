@@ -2,6 +2,15 @@
     "name": "rakib01/laravel-model-docs-md",
     "description": "Generate Markdown documentation for all Eloquent models in Laravel.",
     "type": "library",
+    "homepage": "https://github.com/Rakib01/laravel-model-docs-md",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rakibul Hasan",
+            "email": "rakib.ang3@gmail.com",
+            "role": "Developer"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Rakib01\\LaravelModelDocsMd\\": "src/"
